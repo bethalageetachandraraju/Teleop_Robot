@@ -1,0 +1,261 @@
+<?xml version="1.0" ?>
+<robot name="teleop" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find teleop_description)/urdf/materials.xacro" />
+<!--<xacro:include filename="$(find teleop_description)/urdf/teleop.trans" /> -->
+
+<xacro:include filename="$(find teleop_description)/gazebo/teleop_plugins.gazebo" />
+<xacro:include filename="$(find teleop_description)/gazebo/teleop_physics.gazebo" />
+<xacro:include filename="$(find teleop_description)/gazebo/teleop_materials.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.009796237291588206 -0.02416969245060742 0.13774020909647308" rpy="0 0 0"/>
+    <mass value="13.264639019979176"/>
+    <inertia ixx="0.22772" iyy="0.316552" izz="0.445985" ixy="2.7e-05" iyz="0.00039" ixz="-0.001439"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="-1.4105010514405686e-05 0.04910413172197761 0.00010714406747770744" rpy="0 0 0"/>
+    <mass value="1.7261568362175481"/>
+    <inertia ixx="0.004182" iyy="0.007094" izz="0.004183" ixy="-1e-06" iyz="-3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.017 0.252 -0.093909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.017 0.252 -0.093909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin xyz="-1.4071078718015662e-05 -0.049104329609291536 -5.389341369886613e-05" rpy="0 0 0"/>
+    <mass value="1.7280872851640237"/>
+    <inertia ixx="0.004186" iyy="0.007099" izz="0.004187" ixy="1e-06" iyz="3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.017 -0.202 -0.093909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.017 -0.202 -0.093909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_lid_1">
+  <inertial>
+    <origin xyz="-0.22060018168570208 -6.724244268502613e-05 0.02315244561343688" rpy="0 0 0"/>
+    <mass value="2.7724831434910127"/>
+    <inertia ixx="0.040593" iyy="0.043951" izz="0.083717" ixy="-2.8e-05" iyz="-5e-06" ixz="-0.000179"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.208 0.0248 -0.243909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/top_lid_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.208 0.0248 -0.243909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/top_lid_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-3.757442158525137e-07 -3.4700532509923665e-08 0.004999876465341058" rpy="0 0 0"/>
+    <mass value="0.03517405674775473"/>
+    <inertia ixx="1e-05" iyy="1e-05" izz="1.9e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.14058 0.022984 -0.296614" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.14058 0.022984 -0.296614" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Long_Bar_1">
+  <inertial>
+    <origin xyz="-4.5102810375396984e-15 -3.122502256758253e-17 0.6099999954847075" rpy="0 0 0"/>
+    <mass value="2.0691199999999985"/>
+    <inertia ixx="0.256709" iyy="0.257743" izz="0.001173" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.043 0.025 -0.073909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/Long_Bar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.043 0.025 -0.073909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/Long_Bar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="head_total_1">
+  <inertial>
+    <origin xyz="0.0976195965406295 -0.00018887457448027098 -0.09614440807337998" rpy="0 0 0"/>
+    <mass value="3.6708825358302137"/>
+    <inertia ixx="-0.037927" iyy="-0.024249" izz="0.063286" ixy="-0.000358" iyz="-0.002035" ixz="0.041962"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.043 0.025 -1.293909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/head_total_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.043 0.025 -1.293909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/head_total_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_caster_1">
+  <inertial>
+    <origin xyz="-4.3576253716537394e-15 -2.393918396847994e-16 -0.03147500451529226" rpy="0 0 0"/>
+    <mass value="0.10536607235828893"/>
+    <inertia ixx="4.8e-05" iyy="4.8e-05" izz="2.5e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.155 0.025 -0.063909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/front_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.155 0.025 -0.063909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/front_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_caster_1">
+  <inertial>
+    <origin xyz="-4.496403249731884e-15 -1.6653345369377348e-16 -0.03147500451529227" rpy="0 0 0"/>
+    <mass value="0.105366072358289"/>
+    <inertia ixx="4.8e-05" iyy="4.8e-05" izz="2.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.139 0.025 -0.063909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/back_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.139 0.025 -0.063909" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://teleop_description/meshes/back_caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right motor" type="continuous">
+  <origin xyz="-0.017 -0.252 0.093909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left motor" type="continuous">
+  <origin xyz="-0.017 0.202 0.093909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin xyz="0.208 -0.0248 0.243909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="top_lid_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="-0.06742 0.001816 0.052705" rpy="0 0 0"/>
+  <parent link="top_lid_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin xyz="0.043 -0.025 0.073909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Long_Bar_1"/>
+</joint>
+
+<!--
+<joint name="Slider8" type="prismatic">
+  <origin xyz="0.0 0.0 1.22" rpy="0 0 0"/>
+  <parent link="Long_Bar_1"/>
+  <child link="head_total_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.0" lower="-0.6" effort="100" velocity="100"/>
+</joint>
+-->
+<joint name="Slider8" type="fixed">
+  <origin xyz="0.0 0.0 1.22" rpy="0 0 0"/>
+  <parent link="Long_Bar_1"/>
+  <child link="head_total_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.0" lower="-0.6" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid9" type="fixed">
+  <origin xyz="0.155 -0.025 0.063909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_caster_1"/>
+</joint>
+
+<joint name="Rigid10" type="fixed">
+  <origin xyz="-0.139 -0.025 0.063909" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_caster_1"/>
+</joint>
+
+</robot>

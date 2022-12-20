@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="teleop" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Purple" />
+<xacro:property name="green_color" value="Gazebo/Green" />
+<xacro:property name="red_color" value="Gazebo/RedBright" />
+<xacro:property name="black_color" value="Gazebo/Black" />
+<xacro:property name="yellow_color" value="Gazebo/Yellow" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+<gazebo reference="base_link">
+</gazebo>  
+
+<gazebo reference="right_wheel_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="left_wheel_1">
+  <material>${black_color}</material>
+</gazebo>
+
+<gazebo reference="top_lid_1">
+  <material>${green_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${red_color}</material>
+</gazebo>
+
+<gazebo reference="Long_Bar_1">
+  <material>${yellow_color}</material>
+</gazebo>
+
+<gazebo reference="head_total_1">
+  <material>${green_color}</material>
+</gazebo>
+
+<gazebo reference="front_caster_1">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="back_caster_1">
+  <material>${body_color}</material>
+</gazebo>
+
+</robot>

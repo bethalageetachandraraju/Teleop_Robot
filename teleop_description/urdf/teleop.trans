@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot name="teleop" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="right motor_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="right motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="right motor_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="left motor_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="left motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="left motor_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Slider8_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider8">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider8_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
