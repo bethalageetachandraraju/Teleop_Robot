@@ -16,7 +16,10 @@ roslaunch teleop_description gazebo.launch
 roslaunch teleop_description display.launch
 
 
+
+
 actor plugin with cmd_vel topic
+
 	<actor name="actor">
 	  <pose>-7.5 5 1.01 0 0 0</pose>
 	  <skin>
@@ -42,7 +45,7 @@ actor plugin with cmd_vel topic
 	      </cylinder>
 	    </geometry>
 	  </visual>
-	      <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+     <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
         <!-- <follow_mode>path</follow_mode> -->
         <follow_mode>velocity</follow_mode>
         <vel_topic>/cmd_velp</vel_topic>
@@ -53,6 +56,5 @@ actor plugin with cmd_vel topic
         <angular_tolerance>0.0872</angular_tolerance>
         <angular_velocity>2.5</angular_velocity>
         <default_rotation>1.57</default_rotation>
-      </plugin>  
-	  
-	</actor>
+      </plugin>    
+     </actor>
